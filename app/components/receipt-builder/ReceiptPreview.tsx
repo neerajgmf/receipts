@@ -466,7 +466,7 @@ const ReceiptPreview = () => {
                                                 onError={(e) => {
                                                     console.error('Walmart logo failed to load:', receiptData.logo);
                                                     e.currentTarget.style.display = 'none';
-                                                    const fallback = e.currentTarget.nextElementSibling;
+                                                    const fallback = e.currentTarget.nextElementSibling as HTMLElement;
                                                     if (fallback) fallback.style.display = 'block';
                                                 }}
                                             />
