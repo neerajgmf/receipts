@@ -29,7 +29,7 @@ const InvoiceActions = () => {
 
   const { _t } = useTranslationContext();
   return (
-    <div className="w-full xl:w-[45%]">
+    <div className="w-full xl:w-[50%]">
       <Card className="h-auto xl:sticky xl:top-0 px-2">
         <CardHeader>
           <CardTitle>{_t("actions.title")}</CardTitle>
@@ -99,6 +99,7 @@ const InvoiceActions = () => {
               tooltipLabel="Generate your invoice"
               loading={invoicePdfLoading}
               loadingText="Generating your invoice"
+              className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 hover:from-blue-700 hover:via-purple-700 hover:to-blue-700 text-white border-0"
             >
               <FileInput />
               {_t("actions.generatePdf")}
