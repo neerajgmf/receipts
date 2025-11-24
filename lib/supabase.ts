@@ -1,12 +1,12 @@
 // Stub supabase file to prevent build errors
 export const supabaseAdmin = {
-  from: () => ({
-    select: () => ({
-      eq: () => ({
+  from: (table: string) => ({
+    select: (columns?: string) => ({
+      eq: (column: string, value: any) => ({
         single: () => Promise.resolve({ data: null, error: new Error('Not implemented') })
       })
     }),
-    insert: () => Promise.resolve({ data: null, error: new Error('Not implemented') }),
-    order: () => Promise.resolve({ data: [], error: null })
+    insert: (data: any) => Promise.resolve({ data: null, error: new Error('Not implemented') }),
+    order: (column: string) => Promise.resolve({ data: [], error: null })
   })
 };
