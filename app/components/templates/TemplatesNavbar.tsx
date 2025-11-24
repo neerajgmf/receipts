@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 // Assets
-import Logo from "@/public/assets/img/invoify-logo.svg";
 
 const TemplatesNavbar = () => {
     return (
@@ -18,9 +17,11 @@ const TemplatesNavbar = () => {
                             <Image 
                                 src="/assets/favicon/recipet.png"
                                 alt="Receipt Logo"
-                                width={24}
-                                height={24}
+                                width={32}
+                                height={32}
                                 className="object-contain"
+                                priority
+                                unoptimized
                             />
                             <span className="text-lg font-bold text-blue-600">RGen</span>
                         </div>
