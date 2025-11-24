@@ -18,10 +18,14 @@ import {
     Fuel,
     Phone,
     ChevronDown,
-    ChevronRight
+    ChevronRight,
+    X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+
+// Context
+import { useSidebar } from '@/contexts/SidebarContext';
 
 const menuItems = [
     { icon: Home, label: "Home", href: "/en", hasSubmenu: false },
@@ -65,6 +69,7 @@ const TemplatesSidebar = () => {
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const [expandedItems, setExpandedItems] = useState<string[]>([]);
+    const { isSidebarOpen, closeSidebar } = useSidebar();
 
     const toggleExpanded = (label: string) => {
         setExpandedItems(prev => 
@@ -97,14 +102,14 @@ const TemplatesSidebar = () => {
     };
 
     return (
-        <Card className="w-80 min-h-screen bg-white dark:bg-gray-800 border-r border-l-0 border-t-0 border-b-0 rounded-none">
-            <div className="p-4">
-                <div className="flex items-center gap-3 mb-6">
-                    <div className="text-blue-600 text-xl font-bold">Menu</div>
-                    <Button variant="ghost" size="sm">
-                        <ChevronRight className="h-4 w-4" />
-                    </Button>
-                </div>
+        <Card className="hidden md:block w-80 min-h-screen bg-white dark:bg-gray-800 border-r border-l-0 border-t-0 border-b-0 rounded-none">
+                <div className="p-4">
+                    <div className="flex items-center justify-between gap-3 mb-6">
+                        <div className="text-blue-600 text-xl font-bold">Menu</div>
+                        <Button variant="ghost" size="sm">
+                            <ChevronRight className="h-4 w-4" />
+                        </Button>
+                    </div>
 
                 <nav className="space-y-1">
                     {menuItems.map((item) => {

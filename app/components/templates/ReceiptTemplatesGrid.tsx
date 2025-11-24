@@ -331,13 +331,13 @@ const ReceiptTemplatesGrid = () => {
     };
 
     return (
-        <div className="flex-1 p-6">
-            <div className="mb-6">
-                <div className="flex items-center justify-between mb-4">
-                    <h1 className="text-3xl font-bold text-blue-600">
+        <div className="flex-1 p-3 md:p-6">
+            <div className="mb-4 md:mb-6">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4">
+                    <h1 className="text-2xl md:text-3xl font-bold text-blue-600">
                         {selectedCategory}
                     </h1>
-                    <div className="relative w-80">
+                    <div className="relative w-full md:w-80">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                         <Input
                             type="text"
@@ -348,15 +348,15 @@ const ReceiptTemplatesGrid = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {filteredTemplates().map((template) => (
                     <Link 
                         key={template.id} 
                         href={getTemplateLink(template.id)}
                     >
                         <Card className="hover:shadow-lg transition-shadow cursor-pointer bg-white">
-                            <CardContent className="p-4">
-                                <div className="bg-gray-50 rounded-lg p-4 mb-4 relative">
+                            <CardContent className="p-3 md:p-4">
+                                <div className="bg-gray-50 rounded-lg p-3 md:p-4 mb-3 md:mb-4 relative">
 
                                     {template.id === 4 ? (
                                         <div className="text-xs font-mono leading-tight text-black">
@@ -826,7 +826,7 @@ const ReceiptTemplatesGrid = () => {
                                     )}
                                 </div>
                                 <div className="text-center">
-                                    <h3 className="font-semibold text-gray-800 text-sm">
+                                    <h3 className="font-semibold text-gray-800 text-xs md:text-sm">
                                         {template.title}
                                     </h3>
                                 </div>

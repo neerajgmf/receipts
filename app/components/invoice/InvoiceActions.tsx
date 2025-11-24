@@ -29,8 +29,8 @@ const InvoiceActions = () => {
 
   const { _t } = useTranslationContext();
   return (
-    <div className={`xl:w-[45%]`}>
-      <Card className="h-auto sticky top-0 px-2">
+    <div className="w-full xl:w-[45%]">
+      <Card className="h-auto xl:sticky xl:top-0 px-2">
         <CardHeader>
           <CardTitle>{_t("actions.title")}</CardTitle>
           <CardDescription>{_t("actions.description")}</CardDescription>
