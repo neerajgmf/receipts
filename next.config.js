@@ -8,6 +8,13 @@ const nextConfig = {
             test: /\.map$/,
             use: "ignore-loader",
         });
+        
+        // Exclude rembg.io-main directory from compilation
+        config.module.rules.push({
+            test: /rembg\.io-main/,
+            use: "ignore-loader",
+        });
+        
         return config;
     },
 };
