@@ -271,7 +271,7 @@ export function useReceiptManager() {
     if (receiptsToConvert.length > 0) {
       try {
         // Get unique currencies
-        const currencies = [...new Set(receiptsToConvert.map(r => r.currency))];
+        const currencies = Array.from(new Set(receiptsToConvert.map(r => r.currency)));
         const conversionRates = await getMultipleUSDConversionRates(currencies);
 
         // Apply conversions
