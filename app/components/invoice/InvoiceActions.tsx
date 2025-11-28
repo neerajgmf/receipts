@@ -30,9 +30,13 @@ const InvoiceActions = () => {
   const { _t } = useTranslationContext();
   return (
     <div className="w-full xl:w-[50%]">
-      <Card className="h-auto xl:sticky xl:top-0 px-2">
+      <Card className="h-auto xl:sticky xl:top-0 px-4 md:px-6">
         <CardHeader>
-          <CardTitle>{_t("actions.title")}</CardTitle>
+          <CardTitle>
+            <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+              {_t("actions.title")}
+            </span>
+          </CardTitle>
           <CardDescription>{_t("actions.description")}</CardDescription>
         </CardHeader>
 

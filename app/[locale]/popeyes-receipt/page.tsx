@@ -19,7 +19,7 @@ export default function PopeyesReceiptPage() {
                     
                     {/* Action Buttons */}
                     <div className="flex justify-center gap-4 mb-8">
-                        <Link href="/en/receipt-builder?template=7">
+                        <Link href="/receipt-builder?template=7">
                             <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2">
                                 <Edit className="w-4 h-4 mr-2" />
                                 Edit Receipt

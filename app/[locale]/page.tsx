@@ -4,9 +4,11 @@ import ReceiptTemplatesGrid from "@/app/components/templates/ReceiptTemplatesGri
 
 export default function Home() {
     return (
-        <main className="flex min-h-screen bg-gray-50 dark:bg-gray-900 relative">
-            <TemplatesSidebar />
-            <ReceiptTemplatesGrid />
-        </main>
+        <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900 relative">
+            <main className="flex flex-1">
+                <TemplatesSidebar />
+                <ReceiptTemplatesGrid />
+            </main>
+        </div>
     );
 }

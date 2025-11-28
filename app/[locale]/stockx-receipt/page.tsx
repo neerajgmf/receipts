@@ -17,7 +17,7 @@ export default function StockXReceiptPage() {
                         StockX Receipt Template
                     </h1>
                     <Link 
-                        href={`/${locale}/receipt-builder?template=9`}
+                        href="/receipt-builder?template=9"
                         className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
                     >
                         Edit This Template
@@ -44,7 +44,7 @@ export default function StockXReceiptPage() {
                 {/* Back to Templates Button */}
                 <div className="mt-8 text-center">
                     <Link 
-                        href={`/${locale}/templates`}
+                        href="/templates"
                         className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
                     >
                         ← Back to Templates

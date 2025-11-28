@@ -12,10 +12,10 @@ const PricingPage = () => {
 
                     {/* Header */}
                     <div className="text-center mb-12">
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+                        <h1 className="text-2xl font-semibold text-gray-900 mb-2">
                             Free Receipt Generator
                         </h1>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                        <p className="text-sm text-muted-foreground max-w-2xl mx-auto mb-8">
                             Create professional receipts and invoices completely free. No payment required.
                         </p>
                     </div>
@@ -24,8 +24,8 @@ const PricingPage = () => {
                     <div className="grid grid-cols-1 max-w-md mx-auto mb-20">
                         <div className="relative bg-white rounded-3xl border-2 border-blue-600 overflow-hidden shadow-xl">
                             <div className="p-8">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">Free Forever</h3>
-                                <p className="text-gray-600 mb-6">Everything you need to create receipts</p>
+                                <h3 className="text-2xl font-semibold text-gray-900 mb-2">Free Forever</h3>
+                                <p className="text-sm text-muted-foreground mb-6">Everything you need to create receipts</p>
 
                                 <div className="mb-8">
                                     <div className="flex items-baseline gap-2">
@@ -37,7 +37,7 @@ const PricingPage = () => {
                                     </p>
                                 </div>
 
-                                <Link href="/en">
+                                <Link href="/">
                                     <Button
                                         className="w-full py-6 rounded-xl font-medium text-base bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300"
                                     >

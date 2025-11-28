@@ -262,6 +262,7 @@ const ReceiptTemplatesGrid = () => {
     const searchParams = useSearchParams();
     const locale = params.locale as string || "en";
     const [selectedCategory, setSelectedCategory] = useState("All Templates");
+    const [searchQuery, setSearchQuery] = useState("");
 
     useEffect(() => {
         const category = searchParams.get('category');
@@ -286,47 +287,64 @@ const ReceiptTemplatesGrid = () => {
 
     const filteredTemplates = () => {
         const category = searchParams.get('category');
-        if (!category) return receiptTemplates;
+        let templates = receiptTemplates;
         
-        switch(category) {
-            case 'fast-food':
-                return receiptTemplates.filter(t => 
-                    t.category === 'fast-food' || t.category === 'coffee'
-                );
-            case 'retail':
-                return receiptTemplates.filter(t => 
-                    t.category === 'retail' || t.category === 'ecommerce' || 
-                    t.category === 'luxury' || t.category === 'delivery'
-                );
-            case 'invoices':
-                return receiptTemplates.filter(t => 
-                    t.category === 'invoice'
-                );
-            default:
-                return receiptTemplates;
+        // Filter by category first
+        if (category) {
+            switch(category) {
+                case 'fast-food':
+                    templates = templates.filter(t => 
+                        t.category === 'fast-food' || t.category === 'coffee'
+                    );
+                    break;
+                case 'retail':
+                    templates = templates.filter(t => 
+                        t.category === 'retail' || t.category === 'ecommerce' || 
+                        t.category === 'luxury' || t.category === 'delivery'
+                    );
+                    break;
+                case 'invoices':
+                    templates = templates.filter(t => 
+                        t.category === 'invoice'
+                    );
+                    break;
+                default:
+                    break;
+            }
         }
+        
+        // Filter by search query
+        if (searchQuery.trim()) {
+            const query = searchQuery.toLowerCase().trim();
+            templates = templates.filter(t => 
+                t.title.toLowerCase().includes(query) ||
+                (t.preview && t.preview.toLowerCase().includes(query))
+            );
+        }
+        
+        return templates;
     };
 
     const getTemplateLink = (templateId: number) => {
         switch (templateId) {
             case 3:
-                return `/${locale}/receipt-builder?template=3`;
+                return `/receipt-builder?template=3`;
             case 4:
-                return `/${locale}/fastfood/subway`;
+                return `/fastfood/subway`;
             case 5:
-                return `/${locale}/fastfood/starbucks`;
+                return `/fastfood/starbucks`;
             case 6:
-                return `/${locale}/delivery/uber-eats`;
+                return `/delivery/uber-eats`;
             case 7:
-                return `/${locale}/fastfood/popeyes`;
+                return `/fastfood/popeyes`;
             case 8:
-                return `/${locale}/retail/walmart`;
+                return `/retail/walmart`;
             case 9:
-                return `/${locale}/retail/stockx`;
+                return `/retail/stockx`;
             case 11:
-                return `/${locale}/luxury/louis-vuitton`;
+                return `/luxury/louis-vuitton`;
             default:
-                return `/${locale}/receipt-builder`;
+                return `/receipt-builder`;
         }
     };
 
@@ -334,7 +352,7 @@ const ReceiptTemplatesGrid = () => {
         <div className="flex-1 p-3 md:p-6">
             <div className="mb-4 md:mb-6">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4">
-                    <h1 className="text-2xl md:text-3xl font-bold text-blue-600">
+                    <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
                         {selectedCategory}
                     </h1>
                     <div className="relative w-full md:w-80">
@@ -343,6 +361,8 @@ const ReceiptTemplatesGrid = () => {
                             type="text"
                             placeholder="Search Receipt"
                             className="pl-10"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
                         />
                     </div>
                 </div>

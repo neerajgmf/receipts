@@ -177,7 +177,7 @@ export default function UploadReceiptPage({
       <main className="container mx-auto px-6 py-16 max-w-4xl flex-grow">
         <div className="text-center mb-8 flex flex-col gap-4">
 
-          <h1 className="text-2xl font-medium text-[#030712]">
+          <h1 className="text-2xl font-medium bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
             Organize Your Receipts
           </h1>
           <p className="text-base text-[#4a5565] max-w-full md:max-w-[271px] mx-auto">

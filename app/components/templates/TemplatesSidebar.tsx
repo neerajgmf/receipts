@@ -18,7 +18,6 @@ import {
     Fuel,
     Phone,
     ChevronDown,
-    ChevronRight,
     X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,39 +27,39 @@ import { Card } from "@/components/ui/card";
 import { useSidebar } from '@/contexts/SidebarContext';
 
 const menuItems = [
-    { icon: Home, label: "Home", href: "/en", hasSubmenu: false },
+    { icon: Home, label: "Home", href: "/", hasSubmenu: false },
     { 
         icon: ChefHat, 
         label: "Fast Food", 
-        href: "/en?category=fast-food", 
+        href: "/?category=fast-food", 
         hasSubmenu: true,
         subItems: [
-            { label: "McDonald's Receipt", href: "/en/receipt-builder?template=3" },
-            { label: "Subway Receipt", href: "/en/fastfood/subway" },
-            { label: "Starbucks Receipt", href: "/en/fastfood/starbucks" },
-            { label: "Popeyes Receipt", href: "/en/fastfood/popeyes" }
+            { label: "McDonald's Receipt", href: "/receipt-builder?template=3" },
+            { label: "Subway Receipt", href: "/fastfood/subway" },
+            { label: "Starbucks Receipt", href: "/fastfood/starbucks" },
+            { label: "Popeyes Receipt", href: "/fastfood/popeyes" }
         ]
     },
     { 
         icon: Store, 
         label: "Retail", 
-        href: "/en?category=retail", 
+        href: "/?category=retail", 
         hasSubmenu: true,
         subItems: [
-            { label: "Walmart Receipt", href: "/en/retail/walmart" },
-            { label: "StockX Receipt", href: "/en/retail/stockx" },
-            { label: "Louis Vuitton Receipt", href: "/en/luxury/louis-vuitton" },
-            { label: "Uber Eats Receipt", href: "/en/delivery/uber-eats" }
+            { label: "Walmart Receipt", href: "/retail/walmart" },
+            { label: "StockX Receipt", href: "/retail/stockx" },
+            { label: "Louis Vuitton Receipt", href: "/luxury/louis-vuitton" },
+            { label: "Uber Eats Receipt", href: "/delivery/uber-eats" }
         ]
     },
     { 
         icon: FileText, 
         label: "Invoices", 
-        href: "/en?category=invoices", 
+        href: "/?category=invoices", 
         hasSubmenu: true,
         subItems: [
-            { label: "Create Invoice", href: "/en/create-receipt" },
-            { label: "Receipt Builder", href: "/en/receipt-builder" }
+            { label: "Create Invoice", href: "/create-receipt" },
+            { label: "Receipt Builder", href: "/receipt-builder" }
         ]
     },
 ];
@@ -82,7 +81,7 @@ const TemplatesSidebar = () => {
     const isItemActive = (item: any) => {
         const category = searchParams.get('category');
         
-        if (item.label === "Home" && pathname === "/en" && !category) {
+        if (item.label === "Home" && (pathname === "/" || pathname === "/en") && !category) {
             return true;
         }
         
@@ -104,12 +103,7 @@ const TemplatesSidebar = () => {
     return (
         <Card className="hidden md:block w-80 min-h-screen bg-white dark:bg-gray-800 border-r border-l-0 border-t-0 border-b-0 rounded-none">
                 <div className="p-4">
-                    <div className="flex items-center justify-between gap-3 mb-6">
-                        <div className="text-blue-600 text-xl font-bold">Menu</div>
-                        <Button variant="ghost" size="sm">
-                            <ChevronRight className="h-4 w-4" />
-                        </Button>
-                    </div>
+                  
 
                 <nav className="space-y-1">
                     {menuItems.map((item) => {
@@ -120,20 +114,16 @@ const TemplatesSidebar = () => {
                         return (
                             <div key={item.label}>
                                 <Button
-                                    variant={isActive ? "default" : "ghost"}
-                                    className={`w-full justify-start gap-3 h-12 ${
-                                        isActive 
-                                        ? "bg-blue-600 text-white hover:bg-blue-700" 
-                                            : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                                    }`}
+                                    variant="ghost"
+                                    className="w-full justify-start gap-3 h-12 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                                     onClick={() => item.hasSubmenu && toggleExpanded(item.label)}
                                     asChild={!item.hasSubmenu}
                                 >
                                     {item.hasSubmenu ? (
                                         <div className="flex items-center justify-between w-full">
                                             <Link href={item.href} className="flex items-center gap-3 flex-1">
-                                                <Icon className="h-5 w-5" />
-                                                <span>{item.label}</span>
+                                                <Icon className={`h-5 w-5 ${isActive ? "text-purple-600 dark:text-purple-400" : ""}`} />
+                                                <span className={`text-sm font-medium ${isActive ? "text-purple-600 dark:text-purple-400" : ""}`}>{item.label}</span>
                                             </Link>
                                             <div 
                                                 className="p-2 cursor-pointer"
@@ -143,7 +133,7 @@ const TemplatesSidebar = () => {
                                                 }}
                                             >
                                                 <ChevronDown 
-                                                    className={`h-4 w-4 transition-transform ${
+                                                    className={`h-5 w-5 transition-transform ${
                                                         isExpanded ? "rotate-180" : ""
                                                     }`} 
                                                 />
@@ -151,8 +141,8 @@ const TemplatesSidebar = () => {
                                         </div>
                                     ) : (
                                         <Link href={item.href} className="flex items-center gap-3 w-full">
-                                            <Icon className="h-5 w-5" />
-                                            <span>{item.label}</span>
+                                            <Icon className={`h-5 w-5 ${isActive ? "text-purple-600 dark:text-purple-400" : ""}`} />
+                                            <span className={`text-sm font-medium ${isActive ? "text-purple-600 dark:text-purple-400" : ""}`}>{item.label}</span>
                                         </Link>
                                     )}
                                 </Button>
@@ -164,7 +154,7 @@ const TemplatesSidebar = () => {
                                             <Link 
                                                 key={subItem.label}
                                                 href={subItem.href}
-                                                className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded transition-colors"
+                                                className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded transition-colors"
                                             >
                                                 ↳ {subItem.label}
                                             </Link>

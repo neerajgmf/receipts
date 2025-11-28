@@ -131,11 +131,11 @@ const InvoiceForm = () => {
 
     return (
         <div className="w-full xl:w-[50%]">
-            <Card>
+            <Card className="px-4 md:px-6">
                 <CardHeader>
                     <div className="flex gap-3">
                         <CardTitle className="flex items-center gap-3">
-                            <span className="uppercase">
+                            <span className="uppercase bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
                                 {_t("form.title")}
                             </span>
                         </CardTitle>

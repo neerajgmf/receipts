@@ -19,7 +19,7 @@ export default function WalmartReceiptPage() {
                     
                     {/* Action Buttons */}
                     <div className="flex justify-center gap-4 mb-8">
-                        <Link href="/en/receipt-builder?template=8">
+                        <Link href="/receipt-builder?template=8">
                             <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2">
                                 <Edit className="w-4 h-4 mr-2" />
                                 Edit Receipt

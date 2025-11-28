@@ -122,13 +122,13 @@ ${formData.message}
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
+            <h1 className="text-2xl font-semibold text-gray-900 mb-2">
               Get in{" "}
               <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Touch
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
               Have questions about receipts, invoices, or need help with our templates? We're here to help!
             </p>
           </div>
@@ -138,14 +138,14 @@ ${formData.message}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-3xl shadow-xl border-2 border-gray-100 p-8 sm:p-10">
                 <div className="mb-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-2">Send us a Message</h2>
-                  <p className="text-gray-600">Fill out the form below and we'll get back to you via WhatsApp or Email</p>
+                  <h2 className="text-base font-medium text-gray-900 mb-2">Send us a Message</h2>
+                  <p className="text-sm text-muted-foreground">Fill out the form below and we'll get back to you via WhatsApp or Email</p>
                 </div>
 
                 <form onSubmit={handleWhatsAppSubmit} className="space-y-6">
                   {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
@@ -166,7 +166,7 @@ ${formData.message}
                   {/* Email & Phone */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                         Email Address <span className="text-red-500">*</span>
                       </label>
                       <div className="relative">
@@ -185,7 +185,7 @@ ${formData.message}
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                         Phone Number
                       </label>
                       <div className="relative">
@@ -206,7 +206,7 @@ ${formData.message}
                   {/* Company & Query Type */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                         Company Name
                       </label>
                       <div className="relative">
@@ -224,7 +224,7 @@ ${formData.message}
                     </div>
 
                     <div>
-                      <label htmlFor="queryType" className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label htmlFor="queryType" className="block text-sm font-medium text-gray-700 mb-2">
                         Query Type
                       </label>
                       <select
@@ -246,7 +246,7 @@ ${formData.message}
 
                   {/* Subject */}
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                       Subject
                     </label>
                     <input
@@ -262,7 +262,7 @@ ${formData.message}
 
                   {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                       Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
@@ -281,7 +281,7 @@ ${formData.message}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-6 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                      className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-6 rounded-xl text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       <MessageSquare className="w-5 h-5 mr-2" />
                       Send via WhatsApp
@@ -290,7 +290,7 @@ ${formData.message}
                     <Button
                       type="button"
                       onClick={handleEmailSubmit}
-                      className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                      className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-6 rounded-xl text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       <Mail className="w-5 h-5 mr-2" />
                       Send via Email
@@ -308,7 +308,7 @@ ${formData.message}
             <div className="space-y-6">
               {/* Quick Contact */}
               <div className="bg-gradient-to-br from-purple-600 to-blue-600 rounded-3xl shadow-xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">Quick Contact</h3>
+                <h3 className="text-base font-medium mb-6">Quick Contact</h3>
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
@@ -316,7 +316,7 @@ ${formData.message}
                       <Phone className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="font-semibold mb-1">Phone</p>
+                      <p className="text-sm font-medium mb-1">Phone</p>
                       <a href="tel:+917973361737" className="text-sm opacity-90 hover:opacity-100 transition-opacity">
                         +91 79733 61737
                       </a>
@@ -328,7 +328,7 @@ ${formData.message}
                       <Mail className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="font-semibold mb-1">Email</p>
+                      <p className="text-sm font-medium mb-1">Email</p>
                       <a href="mailto:kbhatt@gostudio.ai" className="text-sm opacity-90 hover:opacity-100 transition-opacity">
                         kbhatt@gostudio.ai
                       </a>
@@ -340,7 +340,7 @@ ${formData.message}
                       <MessageSquare className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="font-semibold mb-1">WhatsApp</p>
+                      <p className="text-sm font-medium mb-1">WhatsApp</p>
                       <a
                         href="https://wa.me/917973361737"
                         target="_blank"
@@ -360,21 +360,21 @@ ${formData.message}
                   <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
                     <Clock className="w-6 h-6 text-purple-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Business Hours</h3>
+                  <h3 className="text-base font-medium text-gray-900">Business Hours</h3>
                 </div>
 
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Monday - Friday</span>
-                    <span className="font-semibold text-gray-900">9:00 AM - 6:00 PM</span>
+                    <span className="text-sm text-gray-600">Monday - Friday</span>
+                    <span className="text-sm font-medium text-gray-900">9:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Saturday</span>
-                    <span className="font-semibold text-gray-900">10:00 AM - 4:00 PM</span>
+                    <span className="text-sm text-gray-600">Saturday</span>
+                    <span className="text-sm font-medium text-gray-900">10:00 AM - 4:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Sunday</span>
-                    <span className="font-semibold text-gray-900">Closed</span>
+                    <span className="text-sm text-gray-600">Sunday</span>
+                    <span className="text-sm font-medium text-gray-900">Closed</span>
                   </div>
                 </div>
 
@@ -387,7 +387,7 @@ ${formData.message}
 
               {/* Popular Queries */}
               <div className="bg-white rounded-3xl shadow-xl border-2 border-gray-100 p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Popular Queries</h3>
+                <h3 className="text-base font-medium text-gray-900 mb-4">Popular Queries</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2 text-sm text-gray-600">
                     <div className="w-1.5 h-1.5 bg-purple-600 rounded-full"></div>

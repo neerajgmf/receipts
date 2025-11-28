@@ -19,7 +19,7 @@ export default function StarbucksReceiptPage() {
                     
                     {/* Action Buttons */}
                     <div className="flex justify-center gap-4 mb-8">
-                        <Link href="/en/receipt-builder?template=5">
+                        <Link href="/receipt-builder?template=5">
                             <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2">
                                 <Edit className="w-4 h-4 mr-2" />
                                 Edit Receipt
