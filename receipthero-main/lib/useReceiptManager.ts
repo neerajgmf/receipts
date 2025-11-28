@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { ProcessedReceipt, StoredReceipt, SpendingBreakdown, UploadedFile, FileStatus } from './types';
 import { normalizeDate } from './utils';
 import { getMultipleUSDConversionRates } from './currency';
-import { useToast } from '@/ui/toast';
+import { useToast } from '../ui/toast';
 
 interface StoredData {
   receipts: StoredReceipt[];

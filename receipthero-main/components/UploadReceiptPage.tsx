@@ -3,11 +3,11 @@
 import type React from "react";
 import { useState, useEffect, useRef } from "react";
 import { useDropzone } from "react-dropzone";
-import { UploadedFile } from "@/lib/types";
+import { UploadedFile } from "../lib/types";
 
 import Header from "./Header";
 import Footer from "./Footer";
-import { Tooltip } from "@/ui/tooltip";
+import { Tooltip } from "../ui/tooltip";
 
 interface UploadReceiptPageProps {
   onProcessFiles: (uploadedFiles: UploadedFile[]) => Promise<void>;

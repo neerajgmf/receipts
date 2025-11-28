@@ -1,11 +1,11 @@
 "use client";
 
 import type React from "react";
-import { UploadedFile } from "@/lib/types";
-import { useReceiptManager } from "@/lib/useReceiptManager";
-import UploadReceiptPage from "@/components/UploadReceiptPage";
-import ResultsPage from "@/components/ResultsPage";
-import { useToast } from "@/ui/toast";
+import { UploadedFile } from "../lib/types";
+import { useReceiptManager } from "../lib/useReceiptManager";
+import UploadReceiptPage from "../components/UploadReceiptPage";
+import ResultsPage from "../components/ResultsPage";
+import { useToast } from "../ui/toast";
 
 export default function HomePage() {
   const { addToast } = useToast();

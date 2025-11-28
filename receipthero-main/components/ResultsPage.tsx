@@ -3,7 +3,7 @@
 import SidebarReceipts from "./SidebarReceipts";
 import TableReceipts from "./TableReceipts";
 import Footer from "./Footer";
-import type { ProcessedReceipt, SpendingBreakdown } from "@/lib/types";
+import type { ProcessedReceipt, SpendingBreakdown } from "../lib/types";
 
 interface ResultsPageProps {
   processedReceipts: ProcessedReceipt[];

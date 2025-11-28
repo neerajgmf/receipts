@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
-import { togetheraiClient } from '@/lib/client';
+import { togetheraiClient } from '../../../lib/client';
 import { z } from 'zod';
 import { zodToJsonSchema } from 'zod-to-json-schema';
-import { ProcessedReceiptSchema } from '@/lib/types';
+import { ProcessedReceiptSchema } from '../../../lib/types';
 import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
 
