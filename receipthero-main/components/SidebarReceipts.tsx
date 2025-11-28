@@ -1,7 +1,7 @@
 "use client";
 
-import { GITHUB_LINK } from "@/lib/constant";
-import type { ProcessedReceipt, SpendingBreakdown } from "@/lib/types";
+import { GITHUB_LINK } from "../lib/constant";
+import type { ProcessedReceipt, SpendingBreakdown } from "../lib/types";
 
 interface SidebarReceiptsProps {
   processedReceipts: ProcessedReceipt[];
