@@ -49,7 +49,7 @@ export async function POST(request: Request) {
     const receiptSchema = z.object({
       receipts: z.array(ProcessedReceiptSchema),
     });
-    const jsonSchema = zodToJsonSchema(receiptSchema);
+    const jsonSchema = zodToJsonSchema(receiptSchema as any, "receiptSchema");
 
     const response = await togetheraiClient.chat.completions.create({
       model: 'meta-llama/Llama-4-Scout-17B-16E-Instruct',

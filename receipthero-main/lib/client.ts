@@ -3,7 +3,7 @@ import { Together } from "together-ai";
 const APP_NAME_HELICONE = "receipthero";
 
 const baseSDKOptions: ConstructorParameters<typeof Together>[0] = {
-  apiKey: process.env.TOGETHER_API_KEY,
+  apiKey: process.env.TOGETHER_API_KEY || "dummy-key-for-build",
 };
 
 if (process.env.HELICONE_API_KEY) {
