@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { togetheraiClient } from '@/lib/client';
 import { z } from 'zod';
+import { zodToJsonSchema } from 'zod-to-json-schema';
 import { ProcessedReceiptSchema } from '@/lib/types';
 import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
@@ -48,7 +49,7 @@ export async function POST(request: Request) {
     const receiptSchema = z.object({
       receipts: z.array(ProcessedReceiptSchema),
     });
-    const jsonSchema = z.toJSONSchema(receiptSchema);
+    const jsonSchema = zodToJsonSchema(receiptSchema);
 
     const response = await togetheraiClient.chat.completions.create({
       model: 'meta-llama/Llama-4-Scout-17B-16E-Instruct',
