@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Kumbh_Sans } from "next/font/google";
 import "./globals.css";
-import { ToastProvider } from "@/ui/toast";
+import { ToastProvider } from "../ui/toast";
 import PlausibleProvider from "next-plausible";
 
 const kumbhSans = Kumbh_Sans({
