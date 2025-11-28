@@ -1,10 +1,10 @@
 "use client";
 
-import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
-import { Button } from "@/ui/button";
+import { Dialog, DialogContent, DialogClose, DialogTitle } from "./ui/dialog";
+import { Button } from "../ui/button";
 import { Trash2, X } from "lucide-react";
-import type { ProcessedReceipt } from "@/lib/types";
-import { formatDisplayDate, toTitleCase } from "@/lib/utils";
+import type { ProcessedReceipt } from "../lib/types";
+import { formatDisplayDate, toTitleCase } from "../lib/utils";
 
 interface ReceiptDetailsDialogProps {
   receipt: ProcessedReceipt | null;

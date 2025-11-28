@@ -1,6 +1,6 @@
 "use client";
 
-import { GITHUB_LINK } from "@/lib/constant";
+import { GITHUB_LINK } from "../lib/constant";
 import { Star } from "lucide-react";
 
 export default function Header() {

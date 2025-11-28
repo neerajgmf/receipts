@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/ui/button";
+import { Button } from "../ui/button";
 import { Trash2 } from "lucide-react";
-import type { ProcessedReceipt } from "@/lib/types";
-import { formatDisplayDate, toTitleCase } from "@/lib/utils";
+import type { ProcessedReceipt } from "../lib/types";
+import { formatDisplayDate, toTitleCase } from "../lib/utils";
 import ReceiptDetailsDialog from "./ReceiptDetailsDialog";
 
 interface TableReceiptsProps {
