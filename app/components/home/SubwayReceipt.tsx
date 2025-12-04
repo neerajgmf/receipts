@@ -75,7 +75,7 @@ const SubwayReceipt = () => {
 
                     {/* Watermark */}
                     <div className="text-center text-xs text-gray-400 mb-2">
-                        Created with Invoify
+                        Created with Receipt
                     </div>
                 </div>
             </Card>

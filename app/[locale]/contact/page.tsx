@@ -57,7 +57,7 @@ ${formData.message}
 
     // Encode message for WhatsApp URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappNumber = "917973361737"; // +91 7973361737
+    const whatsappNumber = "919886395888"; // +91 98863 95888
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
     // Open WhatsApp
@@ -100,7 +100,7 @@ ${formData.message}
     `.trim();
 
     // Encode for mailto URL
-    const mailtoUrl = `mailto:kbhatt@gostudio.ai?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoUrl = `mailto:locustechnology@proton.me?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
     // Open email client
     window.location.href = mailtoUrl;
@@ -317,8 +317,8 @@ ${formData.message}
                     </div>
                     <div>
                       <p className="text-sm font-medium mb-1">Phone</p>
-                      <a href="tel:+917973361737" className="text-sm opacity-90 hover:opacity-100 transition-opacity">
-                        +91 79733 61737
+                      <a href="tel:+919886395888" className="text-sm opacity-90 hover:opacity-100 transition-opacity">
+                        +91 98863 95888
                       </a>
                     </div>
                   </div>
@@ -329,8 +329,8 @@ ${formData.message}
                     </div>
                     <div>
                       <p className="text-sm font-medium mb-1">Email</p>
-                      <a href="mailto:kbhatt@gostudio.ai" className="text-sm opacity-90 hover:opacity-100 transition-opacity">
-                        kbhatt@gostudio.ai
+                      <a href="mailto:locustechnology@proton.me" className="text-sm opacity-90 hover:opacity-100 transition-opacity">
+                        locustechnology@proton.me
                       </a>
                     </div>
                   </div>
@@ -342,7 +342,7 @@ ${formData.message}
                     <div>
                       <p className="text-sm font-medium mb-1">WhatsApp</p>
                       <a
-                        href="https://wa.me/917973361737"
+                        href="https://wa.me/919886395888"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm opacity-90 hover:opacity-100 transition-opacity"

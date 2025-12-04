@@ -153,7 +153,7 @@ const ReceiptPreview = () => {
                                         letterSpacing: '1px'
                                     }}
                                 >
-                                    INVOIFY
+                                    RECEIPT
                                 </div>
                             );
                         })}
